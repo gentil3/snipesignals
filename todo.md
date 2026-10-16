@@ -1,0 +1,23 @@
+# Snipe Signals TODO
+
+- [x] Add Telegram and Instagram contact buttons to hero and pricing sections
+- [x] Clarify free access instructions to specify "send photo/screenshot of UID"
+- [x] Integrate Stripe payment processing for paid tiers
+- [x] Create Stripe checkout flow for $59.99, $299.99, $499.99 plans
+- [x] Replace Bitget with BloFin (https://blofin.com/register?referral_code=DbJDDh, code DbJDDh)
+- [x] Guest Stripe checkout (no Manus login required)
+- [x] Crypto pay CTA via Telegram @Gentil3fx until a processor key is added
+- [x] Add QR code for mobile signup
+- [ ] Add "Verify Access Directly" contact strip under hero section
+- [ ] Update performance snapshot title to "Recent Performance Snapshot"
+- [ ] Polish "Precision Over Hype" section copy for clarity
+- [ ] Update pricing section copy to remove "lifetime" and clarify verification
+- [ ] Create visual "How Access Works" section with icons/numbered boxes
+- [ ] Add footer disclaimer about not custodying funds or executing trades
+- [ ] Add sticky Telegram icon in header
+- [ ] Add final CTA at bottom of page after testimonials
+- [ ] Enhance CTA buttons with hover effects and visual distinction
+- [x] Remove "/ lifetime" text from Partner Access pricing card
+- [x] Remove latest performance section from hero area
+- [x] Redesign pricing section to show three separate, clearly distinct options
+- [x] Enhance "Sign Up via Link" button to be more prominent and clearly tappable

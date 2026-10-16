@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1768425448924,
+      "tag": "0000_dazzling_star_brand",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1768425542496,
+      "tag": "0001_stiff_shockwave",
+      "breakpoints": true
+    }
+  ]
+}
