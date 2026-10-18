@@ -15,12 +15,10 @@ import {
   Send,
   Instagram
 } from 'lucide-react';
-import { toast } from 'sonner';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [processingPayment, setProcessingPayment] = useState<string | null>(null);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -31,28 +29,6 @@ export default function Home() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMenuOpen(false);
-    }
-  };
-
-  const handlePayment = async (productKey: 'MONTHLY' | 'ANNUAL' | 'VIP') => {
-    try {
-      setProcessingPayment(productKey);
-      toast.info('Redirecting to secure checkout...');
-
-      const res = await fetch('/api/create-checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ productKey }),
-      });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok || !data.url) {
-        throw new Error(data.error || 'Card checkout is not live yet');
-      }
-      window.location.href = data.url;
-    } catch (error: any) {
-      toast.error(error.message || 'Card checkout failed — use crypto or message @Gentil3fx');
-    } finally {
-      setProcessingPayment(null);
     }
   };
 
@@ -332,7 +308,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Choose Your Access Level</h2>
-            <p className="text-gray-400">USD. Pay with crypto and save 10%.</p>
+            <p className="text-gray-400">Crypto only. 10% off list price. Message @Gentil3fx to pay.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
@@ -389,7 +365,7 @@ export default function Home() {
                     <span className="text-3xl font-bold text-white">$49.99</span>
                     <span className="text-gray-400 text-sm">USD / mo</span>
                   </div>
-                  <p className="text-gray-400 mt-3 text-sm">$44.99 if paid in crypto</p>
+                  <p className="text-gray-400 mt-3 text-sm">Pay $44.99 in crypto (10% off $49.99)</p>
                 </div>
 
                 <ul className="space-y-3 mb-6 flex-grow">
@@ -403,24 +379,17 @@ export default function Home() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#4ADE80] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300 text-sm">10% off with crypto</span>
+                    <span className="text-gray-300 text-sm">USDT / crypto via Telegram</span>
                   </li>
                 </ul>
 
-                <button
-                  onClick={() => handlePayment('MONTHLY')}
-                  disabled={processingPayment === 'MONTHLY'}
-                  className="w-full py-4 bg-[#2E8B57] hover:bg-[#3CB371] text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl disabled:opacity-50"
-                >
-                  {processingPayment === 'MONTHLY' ? 'Processing...' : 'Pay with card $49.99'}
-                </button>
                 <a
-                  href={cryptoPayUrl('Monthly — $44.99 crypto (10% off)')}
+                  href={cryptoPayUrl('Monthly — $44.99 crypto')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full py-3 mt-2 text-center text-sm font-medium text-gray-300 border border-white/15 rounded-xl hover:bg-white/5 transition-all"
+                  className="block w-full py-4 bg-[#2E8B57] hover:bg-[#3CB371] text-white rounded-xl font-bold text-center transition-all shadow-lg hover:shadow-xl"
                 >
-                  Pay with crypto $44.99
+                  Pay $44.99 in crypto
                 </a>
               </div>
             </div>
@@ -437,7 +406,7 @@ export default function Home() {
                   <div className="flex items-baseline gap-1">
                     <span className="text-3xl font-bold text-white">$449.91</span>
                   </div>
-                  <p className="text-gray-400 mt-3 text-sm">vs $599.88 monthly · $404.92 crypto</p>
+                  <p className="text-gray-400 mt-3 text-sm">Pay $404.92 in crypto (25% + 10% off)</p>
                 </div>
 
                 <ul className="space-y-3 mb-6 flex-grow">
@@ -451,24 +420,17 @@ export default function Home() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#4ADE80] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300 text-sm">Another 10% off with crypto</span>
+                    <span className="text-gray-300 text-sm">USDT / crypto via Telegram</span>
                   </li>
                 </ul>
 
-                <button
-                  onClick={() => handlePayment('ANNUAL')}
-                  disabled={processingPayment === 'ANNUAL'}
-                  className="w-full py-4 bg-[#2E8B57] hover:bg-[#3CB371] text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl disabled:opacity-50"
-                >
-                  {processingPayment === 'ANNUAL' ? 'Processing...' : 'Pay with card $449.91'}
-                </button>
                 <a
-                  href={cryptoPayUrl('Annual — $404.92 crypto (25% + 10% off)')}
+                  href={cryptoPayUrl('Annual — $404.92 crypto')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full py-3 mt-2 text-center text-sm font-medium text-gray-300 border border-white/15 rounded-xl hover:bg-white/5 transition-all"
+                  className="block w-full py-4 bg-[#2E8B57] hover:bg-[#3CB371] text-white rounded-xl font-bold text-center transition-all shadow-lg hover:shadow-xl"
                 >
-                  Pay with crypto $404.92
+                  Pay $404.92 in crypto
                 </a>
               </div>
             </div>
@@ -486,7 +448,7 @@ export default function Home() {
                     <span className="text-3xl font-bold text-white">$249.99</span>
                     <span className="text-gray-400 text-sm">USD / mo</span>
                   </div>
-                  <p className="text-gray-400 mt-3 text-sm">$224.99 if paid in crypto</p>
+                  <p className="text-gray-400 mt-3 text-sm">Pay $224.99 in crypto (10% off $249.99)</p>
                 </div>
 
                 <ul className="space-y-3 mb-6 flex-grow">
@@ -504,20 +466,13 @@ export default function Home() {
                   </li>
                 </ul>
 
-                <button
-                  onClick={() => handlePayment('VIP')}
-                  disabled={processingPayment === 'VIP'}
-                  className="w-full py-4 bg-[#2E8B57] hover:bg-[#3CB371] text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl disabled:opacity-50"
-                >
-                  {processingPayment === 'VIP' ? 'Processing...' : 'Pay with card $249.99'}
-                </button>
                 <a
-                  href={cryptoPayUrl('VIP 1-on-1 — $224.99 crypto (10% off)')}
+                  href={cryptoPayUrl('VIP 1-on-1 — $224.99 crypto')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full py-3 mt-2 text-center text-sm font-medium text-gray-300 border border-white/15 rounded-xl hover:bg-white/5 transition-all"
+                  className="block w-full py-4 bg-[#2E8B57] hover:bg-[#3CB371] text-white rounded-xl font-bold text-center transition-all shadow-lg hover:shadow-xl"
                 >
-                  Pay with crypto $224.99
+                  Pay $224.99 in crypto
                 </a>
               </div>
             </div>
@@ -547,6 +502,10 @@ export default function Home() {
               {
                 q: "Can beginners use this?",
                 a: "Yes. Every signal includes specific Entry, Stop Loss, and Take Profit levels, making it easy to follow. However, we recommend beginners start with small position sizes to learn risk management."
+              },
+              {
+                q: "How do I pay?",
+                a: "Paid plans are crypto only (10% off list). Tap Pay in crypto and message @Gentil3fx. Partnering is free with a BloFin signup (code DbJDDh) plus a UID screenshot."
               }
             ].map((item, index) => (
               <div key={index} className="border border-white/10 rounded-xl bg-[#0B0E11] overflow-hidden">
