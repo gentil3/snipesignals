@@ -12,7 +12,7 @@ export type InboundJudgments = {
 };
 
 export type InboundDecision =
-  | { action: "quote_crypto"; plan: "MONTHLY" | "ANNUAL" | "VIP"; amountUsd: string }
+  | { action: "quote_crypto"; plan: "MONTHLY" | "SEMI_ANNUAL" | "ANNUAL" | "PRIVATE_DESK"; amountUsd: string }
   | { action: "partnering" }
   | { action: "ask_which_plan" }
   | { action: "human_support" }
@@ -31,11 +31,14 @@ export function decideInbound(j: InboundJudgments): InboundDecision {
     if (j.named_plan === "monthly") {
       return { action: "quote_crypto", plan: "MONTHLY", amountUsd: PRODUCTS.MONTHLY.cryptoDisplayPrice };
     }
+    if (j.named_plan === "six_month") {
+      return { action: "quote_crypto", plan: "SEMI_ANNUAL", amountUsd: PRODUCTS.SEMI_ANNUAL.cryptoDisplayPrice };
+    }
     if (j.named_plan === "annual") {
       return { action: "quote_crypto", plan: "ANNUAL", amountUsd: PRODUCTS.ANNUAL.cryptoDisplayPrice };
     }
-    if (j.named_plan === "vip_desk") {
-      return { action: "quote_crypto", plan: "VIP", amountUsd: PRODUCTS.VIP.cryptoDisplayPrice };
+    if (j.named_plan === "private_desk") {
+      return { action: "quote_crypto", plan: "PRIVATE_DESK", amountUsd: PRODUCTS.PRIVATE_DESK.cryptoDisplayPrice };
     }
     return { action: "ask_which_plan" };
   }

@@ -16,10 +16,10 @@ export const INBOUND_QUESTIONS = {
   wants_partnering: {
     type: "noul" as const,
     instructions:
-      "Does `message` ask for free Partnering access (BloFin signup, SnipeSignalsVIP channel, discussion group) without paying?",
+      "Does `message` ask for free Partner Access after a BloFin, MEXC, or Pump.fun referral signup?",
     criteria: {
-      true: "The sender wants the free Partnering path.",
-      false: "The sender is not asking for free Partnering.",
+      true: "The sender wants the free referral path.",
+      false: "The sender is not asking for free Partner Access.",
     },
   },
   is_support: {
@@ -34,10 +34,11 @@ export const INBOUND_QUESTIONS = {
     type: "choice" as const,
     instructions: "Which Snipe Signals plan does `message` name?",
     criteria: {
-      partnering: "Free Partnering / BloFin signup only",
+      partnering: "Free Partner Access via BloFin, MEXC, or Pump.fun",
       monthly: "Paid monthly access",
+      six_month: "Paid six-month access",
       annual: "Paid year up front",
-      vip_desk: "VIP 1-on-1 desk",
+      private_desk: "Private Desk 1-on-1",
       unspecified: "No specific plan named",
     },
   },

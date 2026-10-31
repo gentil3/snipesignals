@@ -15,6 +15,7 @@ import {
   Send,
   Instagram
 } from 'lucide-react';
+import { REFERRALS, TELEGRAM_INVITE } from '@shared/referrals';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -308,53 +309,65 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Choose Your Access Level</h2>
-            <p className="text-gray-400">Crypto only. 10% off list price. Message @Gentil3fx to pay.</p>
+            <p className="text-gray-400">Free: signup with a referral code, then join Telegram. Paid: crypto via Telegram.</p>
+          </div>
+
+          <div className="max-w-7xl mx-auto mb-10 p-1 rounded-3xl bg-gradient-to-b from-[#2E8B57] to-[#1a5235]">
+            <div className="bg-[#0B0E11] rounded-[22px] p-8">
+              <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-8">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Partner Access</h3>
+                  <p className="text-3xl font-bold text-[#4ADE80]">FREE</p>
+                  <p className="text-gray-400 mt-3 max-w-xl">
+                    Register with a referral code, then open the Telegram invite. Access is instant.
+                  </p>
+                </div>
+                <ol className="text-sm text-gray-300 space-y-2 lg:min-w-[280px]">
+                  <li><span className="text-[#4ADE80] font-bold">1.</span> Sign up with a referral code</li>
+                  <li><span className="text-[#4ADE80] font-bold">2.</span> Click the Telegram invite</li>
+                  <li><span className="text-[#4ADE80] font-bold">3.</span> Instant channel + discussion group</li>
+                </ol>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div className="p-4 rounded-xl border border-[#2E8B57]/40 bg-white/5">
+                  <p className="text-xs uppercase tracking-wide text-[#4ADE80] mb-1">{REFERRALS.BLOFIN.label}</p>
+                  <h4 className="font-bold text-white mb-1">{REFERRALS.BLOFIN.name}</h4>
+                  <p className="text-xs text-gray-400 mb-3">Code <span className="font-mono text-[#4ADE80]">{REFERRALS.BLOFIN.code}</span></p>
+                  <a href={REFERRALS.BLOFIN.url} target="_blank" rel="noopener noreferrer" className="block w-full py-3 bg-[#2E8B57] hover:bg-[#3CB371] text-white rounded-lg font-bold text-center text-sm">
+                    Sign up on BloFin
+                  </a>
+                </div>
+                <div className="p-4 rounded-xl border border-white/10 bg-white/5">
+                  <p className="text-xs uppercase tracking-wide text-gray-400 mb-1">{REFERRALS.MEXC.label}</p>
+                  <h4 className="font-bold text-white mb-1">{REFERRALS.MEXC.name}</h4>
+                  <p className="text-xs text-gray-400 mb-3">Code <span className="font-mono text-[#4ADE80]">{REFERRALS.MEXC.code}</span></p>
+                  <a href={REFERRALS.MEXC.url} target="_blank" rel="noopener noreferrer" className="block w-full py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg font-bold text-center text-sm">
+                    Sign up on MEXC
+                  </a>
+                </div>
+                <div className="p-4 rounded-xl border border-white/10 bg-white/5">
+                  <p className="text-xs uppercase tracking-wide text-amber-400 mb-1">{REFERRALS.PUMPFUN.label}</p>
+                  <h4 className="font-bold text-white mb-1">{REFERRALS.PUMPFUN.name}</h4>
+                  <p className="text-xs text-gray-400 mb-3">App code <span className="font-mono text-[#4ADE80]">{REFERRALS.PUMPFUN.code}</span></p>
+                  <a href={REFERRALS.PUMPFUN.url} target="_blank" rel="noopener noreferrer" className="block w-full py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg font-bold text-center text-sm">
+                    Open Pump.fun
+                  </a>
+                </div>
+              </div>
+
+              <a
+                href={TELEGRAM_INVITE}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full py-4 bg-[#0088cc] hover:bg-[#0077b5] text-white rounded-xl font-bold text-center"
+              >
+                Join Telegram — instant access
+              </a>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {/* Partner — free via BloFin */}
-            <div className="p-1 rounded-3xl bg-gradient-to-b from-gray-700 to-gray-900">
-              <div className="bg-[#0B0E11] rounded-[22px] p-6 h-full flex flex-col">
-                <div className="mb-6">
-                  <h3 className="text-xl font-bold text-white mb-2">Partnering</h3>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-bold text-[#4ADE80]">FREE</span>
-                  </div>
-                  <p className="text-gray-400 mt-3 text-sm">BloFin signup (Canada-friendly)</p>
-                </div>
-
-                <ul className="space-y-3 mb-6 flex-grow">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#4ADE80] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300 text-sm">SnipeSignalsVIP channel</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#4ADE80] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300 text-sm">SnipeSignalsVIP discussion group</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#4ADE80] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300 text-sm">Send BloFin UID screenshot to @Gentil3fx</span>
-                  </li>
-                </ul>
-
-                <div className="space-y-3">
-                  <a 
-                    href="https://blofin.com/register?referral_code=DbJDDh" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="block w-full py-4 bg-[#2E8B57] hover:bg-[#3CB371] text-white rounded-xl font-bold text-center transition-all shadow-lg hover:shadow-xl text-base"
-                  >
-                    Sign Up via BloFin →
-                  </a>
-                  <div className="text-center p-3 bg-white/5 rounded-lg border border-white/10">
-                    <p className="text-xs text-gray-400 mb-1">Referral code:</p>
-                    <span className="font-mono text-[#4ADE80] font-bold text-sm">DbJDDh</span>
-                  </div>
-                  <p className="text-xs text-gray-400 text-center">Send UID screenshot to @Gentil3fx</p>
-                </div>
-              </div>
-            </div>
 
             {/* Monthly */}
             <div className="p-1 rounded-3xl bg-gradient-to-b from-[#2E8B57] to-[#1a5235]">
@@ -362,80 +375,113 @@ export default function Home() {
                 <div className="mb-6">
                   <h3 className="text-xl font-bold text-white mb-2">Monthly</h3>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-bold text-white">$49.99</span>
+                    <span className="text-3xl font-bold text-white">$59.99</span>
                     <span className="text-gray-400 text-sm">USD / mo</span>
                   </div>
-                  <p className="text-gray-400 mt-3 text-sm">Pay $44.99 in crypto (10% off $49.99)</p>
+                  <p className="text-gray-400 mt-3 text-sm">Channel + discussion group</p>
                 </div>
 
                 <ul className="space-y-3 mb-6 flex-grow">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#4ADE80] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300 text-sm">SnipeSignalsVIP channel</span>
+                    <span className="text-gray-300 text-sm">Snipe Signals channel</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#4ADE80] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300 text-sm">SnipeSignalsVIP discussion group</span>
+                    <span className="text-gray-300 text-sm">Discussion group</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#4ADE80] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300 text-sm">USDT / crypto via Telegram</span>
+                    <span className="text-gray-300 text-sm">No referral required</span>
                   </li>
                 </ul>
 
                 <a
-                  href={cryptoPayUrl('Monthly — $44.99 crypto')}
+                  href={cryptoPayUrl('Monthly — $59.99')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full py-4 bg-[#2E8B57] hover:bg-[#3CB371] text-white rounded-xl font-bold text-center transition-all shadow-lg hover:shadow-xl"
                 >
-                  Pay $44.99 in crypto
+                  Pay $59.99 in crypto
                 </a>
               </div>
             </div>
 
-            {/* Annual — 25% off */}
+            {/* 6 Months */}
             <div className="p-1 rounded-3xl bg-gradient-to-b from-[#2E8B57] to-[#1a5235]">
-              <div className="bg-[#0B0E11] rounded-[22px] p-6 h-full flex flex-col relative">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#2E8B57] text-white text-xs font-bold px-4 py-1 rounded-full whitespace-nowrap">
-                  25% OFF
-                </div>
-                
+              <div className="bg-[#0B0E11] rounded-[22px] p-6 h-full flex flex-col">
                 <div className="mb-6">
-                  <h3 className="text-xl font-bold text-white mb-2">Year up front</h3>
+                  <h3 className="text-xl font-bold text-white mb-2">6 Months</h3>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-bold text-white">$449.91</span>
+                    <span className="text-3xl font-bold text-white">$299.99</span>
                   </div>
-                  <p className="text-gray-400 mt-3 text-sm">Pay $404.92 in crypto (25% + 10% off)</p>
+                  <p className="text-gray-400 mt-3 text-sm">Six months of paid access</p>
                 </div>
 
                 <ul className="space-y-3 mb-6 flex-grow">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#4ADE80] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300 text-sm">Same VIP channel + group</span>
+                    <span className="text-gray-300 text-sm">Snipe Signals channel</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#4ADE80] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300 text-sm">25% off 12 months</span>
+                    <span className="text-gray-300 text-sm">Discussion group</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#4ADE80] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300 text-sm">USDT / crypto via Telegram</span>
+                    <span className="text-gray-300 text-sm">No referral required</span>
                   </li>
                 </ul>
 
                 <a
-                  href={cryptoPayUrl('Annual — $404.92 crypto')}
+                  href={cryptoPayUrl('6 Months — $299.99')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full py-4 bg-[#2E8B57] hover:bg-[#3CB371] text-white rounded-xl font-bold text-center transition-all shadow-lg hover:shadow-xl"
                 >
-                  Pay $404.92 in crypto
+                  Pay $299.99 in crypto
                 </a>
               </div>
             </div>
 
-            {/* VIP 1-on-1 */}
+            {/* Annual */}
+            <div className="p-1 rounded-3xl bg-gradient-to-b from-[#2E8B57] to-[#1a5235]">
+              <div className="bg-[#0B0E11] rounded-[22px] p-6 h-full flex flex-col">
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold text-white mb-2">Annual</h3>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-3xl font-bold text-white">$499.99</span>
+                  </div>
+                  <p className="text-gray-400 mt-3 text-sm">Twelve months of paid access</p>
+                </div>
+
+                <ul className="space-y-3 mb-6 flex-grow">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#4ADE80] flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300 text-sm">Snipe Signals channel</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#4ADE80] flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300 text-sm">Discussion group</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#4ADE80] flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300 text-sm">No referral required</span>
+                  </li>
+                </ul>
+
+                <a
+                  href={cryptoPayUrl('Annual — $499.99')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-4 bg-[#2E8B57] hover:bg-[#3CB371] text-white rounded-xl font-bold text-center transition-all shadow-lg hover:shadow-xl"
+                >
+                  Pay $499.99 in crypto
+                </a>
+              </div>
+            </div>
+
+            {/* Private Desk */}
             <div className="p-1 rounded-3xl bg-gradient-to-b from-amber-400 to-[#2E8B57]">
               <div className="bg-[#0B0E11] rounded-[22px] p-6 h-full flex flex-col relative">
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-400 text-black text-xs font-bold px-4 py-1 rounded-full whitespace-nowrap">
@@ -443,36 +489,36 @@ export default function Home() {
                 </div>
                 
                 <div className="mb-6">
-                  <h3 className="text-xl font-bold text-white mb-2">VIP desk</h3>
+                  <h3 className="text-xl font-bold text-white mb-2">Private Desk</h3>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-bold text-white">$249.99</span>
+                    <span className="text-3xl font-bold text-white">$200</span>
                     <span className="text-gray-400 text-sm">USD / mo</span>
                   </div>
-                  <p className="text-gray-400 mt-3 text-sm">Pay $224.99 in crypto (10% off $249.99)</p>
+                  <p className="text-gray-400 mt-3 text-sm">Direct messaging, higher-touch support</p>
                 </div>
 
                 <ul className="space-y-3 mb-6 flex-grow">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#4ADE80] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300 text-sm">Direct 1-on-1 access</span>
+                    <span className="text-gray-300 text-sm">Everything in paid access</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#4ADE80] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300 text-sm">Questions answered</span>
+                    <span className="text-gray-300 text-sm">Direct 1-on-1 messaging</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#4ADE80] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300 text-sm">Personal entries, TPs, and SLs</span>
+                    <span className="text-gray-300 text-sm">Higher-touch support</span>
                   </li>
                 </ul>
 
                 <a
-                  href={cryptoPayUrl('VIP 1-on-1 — $224.99 crypto')}
+                  href={cryptoPayUrl('Private Desk — $200/mo')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full py-4 bg-[#2E8B57] hover:bg-[#3CB371] text-white rounded-xl font-bold text-center transition-all shadow-lg hover:shadow-xl"
                 >
-                  Pay $224.99 in crypto
+                  Pay $200 in crypto
                 </a>
               </div>
             </div>
@@ -488,8 +534,8 @@ export default function Home() {
           <div className="space-y-4">
             {[
               {
-                q: "How long does verification take for Partnering (free)?",
-                a: "Sign up at BloFin with code DbJDDh, then send a UID screenshot to @Gentil3fx. Access is to SnipeSignalsVIP + the discussion group. Allow up to 24 hours."
+                q: "How do I get free Partner Access?",
+                a: "Sign up with a referral code (BloFin DbJDDh primary, or MEXC mexc-2dqcG), then open the Telegram invite. Access is instant. Pump.fun code Gents is optional for on-chain / memecoin."
               },
               {
                 q: "Is this financial advice?",
@@ -505,7 +551,7 @@ export default function Home() {
               },
               {
                 q: "How do I pay?",
-                a: "Paid plans are crypto only (10% off list). Tap Pay in crypto and message @Gentil3fx. Partnering is free with a BloFin signup (code DbJDDh) plus a UID screenshot."
+                a: "Paid plans are crypto via Telegram (@Gentil3fx): Monthly $59.99, 6 Months $299.99, Annual $499.99, Private Desk $200/mo. Free Partner Access is signup with a referral code, then the Telegram invite."
               }
             ].map((item, index) => (
               <div key={index} className="border border-white/10 rounded-xl bg-[#0B0E11] overflow-hidden">

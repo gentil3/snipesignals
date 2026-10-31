@@ -10,7 +10,7 @@ describe("decideInbound", () => {
         is_support: 0.1,
         named_plan: "monthly",
       })
-    ).toEqual({ action: "quote_crypto", plan: "MONTHLY", amountUsd: "$44.99" });
+    ).toEqual({ action: "quote_crypto", plan: "MONTHLY", amountUsd: "$59.99" });
   });
 
   it("asks which plan when they want to pay but did not name one", () => {

@@ -36,10 +36,11 @@ const { answers } = await client.systemOne({
   questions: {
     wants_to_pay: noul("Does `message` ask to pay, buy, or subscribe to Snipe Signals?"),
     named_plan: choice("Which Snipe Signals plan does `message` name?", {
-      partnering: "Free Partnering / BloFin signup only",
+      partnering: "Free Partner Access via BloFin, MEXC, or Pump.fun",
       monthly: "Paid monthly access",
+      six_month: "Paid six-month access",
       annual: "Paid year up front",
-      vip_desk: "VIP 1-on-1 desk",
+      private_desk: "Private Desk 1-on-1",
       unspecified: "No specific plan named",
     }),
   },

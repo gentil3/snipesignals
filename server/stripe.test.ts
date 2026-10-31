@@ -45,12 +45,12 @@ describe("stripe.createCheckoutSession", () => {
     expect(result.url).toContain("checkout.stripe.com");
   });
 
-  it("should create a checkout session for VIP 1-on-1 plan", async () => {
+  it("should create a checkout session for Private Desk plan", async () => {
     const { ctx } = createAuthContext();
     const caller = appRouter.createCaller(ctx);
 
     const result = await caller.stripe.createCheckoutSession({
-      productKey: "VIP",
+      productKey: "PRIVATE_DESK",
     });
 
     expect(result).toHaveProperty("sessionId");

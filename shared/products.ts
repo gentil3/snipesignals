@@ -1,62 +1,55 @@
 /**
- * Snipe Signals Product Catalog
- *
- * Card prices. Crypto is 10% off (handled as a Telegram invoice until a
- * crypto processor is wired). Annual is 25% off 12× monthly.
+ * Snipe Signals paid catalog (USD). Crypto checkout is Telegram until a processor is wired.
  */
 
 export const PRODUCTS = {
   MONTHLY: {
-    id: 'snipe_signals_monthly',
-    name: 'Snipe Signals - Monthly',
-    description: 'SnipeSignalsVIP channel + discussion group',
-    price: 4999, // $49.99
-    cryptoPrice: 4499, // 10% off
-    currency: 'usd',
-    interval: 'month' as const,
-    displayPrice: '$49.99',
-    cryptoDisplayPrice: '$44.99',
-    features: [
-      'SnipeSignalsVIP channel',
-      'SnipeSignalsVIP discussion group',
-      'No exchange signup required',
-      'Priority support',
-    ],
+    id: "snipe_signals_monthly",
+    name: "Snipe Signals - Monthly",
+    description: "Private Telegram channel + discussion group",
+    price: 5999,
+    cryptoPrice: 5999,
+    currency: "usd",
+    interval: "month" as const,
+    displayPrice: "$59.99",
+    cryptoDisplayPrice: "$59.99",
+    features: ["Snipe Signals channel", "Discussion group", "No referral required"],
+  },
+  SEMI_ANNUAL: {
+    id: "snipe_signals_6mo",
+    name: "Snipe Signals - 6 Months",
+    description: "Six months of paid access",
+    price: 29999,
+    cryptoPrice: 29999,
+    currency: "usd",
+    interval: "six_months" as const,
+    displayPrice: "$299.99",
+    cryptoDisplayPrice: "$299.99",
+    features: ["Snipe Signals channel", "Discussion group", "No referral required"],
   },
   ANNUAL: {
-    id: 'snipe_signals_annual',
-    name: 'Snipe Signals - Annual',
-    description: '12 months, 25% off vs monthly',
-    price: 44991, // $49.99 × 12 × 0.75 = $449.91
-    cryptoPrice: 40492, // 10% off
-    currency: 'usd',
-    interval: 'year' as const,
-    displayPrice: '$449.91',
-    cryptoDisplayPrice: '$404.92',
-    features: [
-      'SnipeSignalsVIP channel',
-      'SnipeSignalsVIP discussion group',
-      '25% off vs paying monthly',
-      'No exchange signup required',
-      'Priority support',
-    ],
+    id: "snipe_signals_annual",
+    name: "Snipe Signals - Annual",
+    description: "Twelve months of paid access",
+    price: 49999,
+    cryptoPrice: 49999,
+    currency: "usd",
+    interval: "year" as const,
+    displayPrice: "$499.99",
+    cryptoDisplayPrice: "$499.99",
+    features: ["Snipe Signals channel", "Discussion group", "No referral required"],
   },
-  VIP: {
-    id: 'snipe_signals_vip_desk',
-    name: 'Snipe Signals - VIP 1-on-1',
-    description: '1-on-1 access, questions, and personal entries / TPs / SLs',
-    price: 24999, // $249.99
-    cryptoPrice: 22499, // 10% off
-    currency: 'usd',
-    interval: 'month' as const,
-    displayPrice: '$249.99',
-    cryptoDisplayPrice: '$224.99',
-    features: [
-      'Everything in paid access',
-      'Direct 1-on-1 access',
-      'Questions answered',
-      'Personal entries, TPs, and SLs',
-    ],
+  PRIVATE_DESK: {
+    id: "snipe_signals_private_desk",
+    name: "Snipe Signals - Private Desk",
+    description: "1-on-1 access with direct messaging",
+    price: 20000,
+    cryptoPrice: 20000,
+    currency: "usd",
+    interval: "month" as const,
+    displayPrice: "$200",
+    cryptoDisplayPrice: "$200",
+    features: ["Everything in paid access", "Direct 1-on-1 messaging", "Higher-touch support"],
   },
 } as const;
 

@@ -1,7 +1,8 @@
 const PRODUCTS: Record<string, { name: string; amount: number }> = {
-  MONTHLY: { name: "Snipe Signals — Monthly", amount: 4999 },
-  ANNUAL: { name: "Snipe Signals — Annual (25% off)", amount: 44991 },
-  VIP: { name: "Snipe Signals — VIP 1-on-1", amount: 24999 },
+  MONTHLY: { name: "Snipe Signals — Monthly", amount: 5999 },
+  SEMI_ANNUAL: { name: "Snipe Signals — 6 Months", amount: 29999 },
+  ANNUAL: { name: "Snipe Signals — Annual", amount: 49999 },
+  PRIVATE_DESK: { name: "Snipe Signals — Private Desk", amount: 20000 },
 };
 
 export const onRequestPost: PagesFunction<{ STRIPE_SECRET_KEY: string }> = async ({ request, env }) => {

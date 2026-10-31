@@ -1,11 +1,8 @@
 # Snipe Signals TODO
 
 - [x] Add Telegram and Instagram contact buttons to hero and pricing sections
-- [x] Clarify free access instructions to specify "send photo/screenshot of UID"
-- [x] Integrate Stripe payment processing for paid tiers
-- [x] Create Stripe checkout flow for $59.99, $299.99, $499.99 plans
-- [x] Replace Bitget with BloFin (https://blofin.com/register?referral_code=DbJDDh, code DbJDDh)
-- [x] Guest Stripe checkout (no Manus login required)
+- [x] Partner Access: BloFin primary, MEXC secondary, Pump.fun optional; instant Telegram invite
+- [x] Paid tiers: Monthly $59.99, 6 Months $299.99, Annual $499.99, Private Desk $200/mo
 - [x] Crypto pay CTA via Telegram @Gentil3fx until a processor key is added
 - [x] Add QR code for mobile signup
 - [ ] Add "Verify Access Directly" contact strip under hero section
